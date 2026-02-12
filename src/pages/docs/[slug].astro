@@ -1,0 +1,23 @@
+---
+// src/pages/docs/[slug].astro
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'intro' }, props: { title: 'Вступ' } },
+    { params: { slug: 'installation' }, props: { title: 'Встановлення' } },
+    { params: { slug: 'quickstart' }, props: { title: 'Швидкий старт' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const { title } = Astro.props;
+---
+
+<html>
+<head>
+  <title>{title} | DocuFlow</title>
+</head>
+<body>
+  <h1>{title}</h1>
+  <p>Slug: {slug}</p>
+</body>
+</html>

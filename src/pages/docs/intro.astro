@@ -1,0 +1,26 @@
+---
+// src/pages/docs/intro.astro
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout title="Вступ">
+  <!-- Контент для sidebar -->
+  <nav slot="sidebar">
+    <a href="/docs/intro">Вступ</a>
+    <a href="/docs/installation">Встановлення</a>
+    <a href="/docs/quickstart">Швидкий старт</a>
+  </nav>
+
+  <!-- Основний контент (без slot атрибута) -->
+  <article>
+    <h1>Вступ до DocuFlow</h1>
+    <p>Ласкаво просимо до документації...</p>
+  </article>
+
+  <!-- Зміст сторінки -->
+  <div slot="toc">
+    <h4>На цій сторінці</h4>
+    <a href="#overview">Огляд</a>
+    <a href="#features">Можливості</a>
+  </div>
+</DocsLayout>

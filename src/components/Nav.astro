@@ -1,0 +1,42 @@
+---
+// src/components/Nav.astro
+const links = [
+  { href: '/', label: 'Головна' },
+  { href: '/docs', label: 'Документація' },
+  { href: '/about', label: 'Про нас' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav>
+  {links.map(link => (
+    <a
+      href={link.href}
+      class:list={[{ active: currentPath === link.href }]}
+    >
+      {link.label}
+    </a>
+  ))}
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  a {
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a.active {
+    color: #667eea;
+  }
+
+  a:hover {
+    color: #667eea;
+  }
+</style>

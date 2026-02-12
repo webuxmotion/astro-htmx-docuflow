@@ -1,74 +1,55 @@
 ---
-const projectName = 'DocuFlow';
-const tagline = 'Сучасна документація для вашого проекту';
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{projectName}</title>
-</head>
-<body>
-  <main>
-    <h1>Ласкаво просимо до {projectName}</h1>
-    <p>{tagline}</p>
+<BaseLayout title="Головна">
+  <main class="hero">
+    <h1>Документація, яка працює</h1>
+    <p class="tagline">
+      Створюйте красиву документацію для ваших проектів
+      з Astro та HTMX
+    </p>
 
-    <div class="features">
-      <div class="feature">
-        <h3>Швидкий пошук</h3>
-        <p>Знайдіть потрібну інформацію миттєво</p>
-      </div>
-      <div class="feature">
-        <h3>Версіонування</h3>
-        <p>Документація для кожної версії</p>
-      </div>
-      <div class="feature">
-        <h3>Темна тема</h3>
-        <p>Зручне читання в будь-який час</p>
-      </div>
+    <div class="actions">
+      <Button href="/docs/getting-started">
+        Почати роботу
+      </Button>
+      <Button variant="outline" href="/docs">
+        Переглянути документацію
+      </Button>
     </div>
   </main>
+</BaseLayout>
 
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      color: white;
-    }
+<style>
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
 
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
+  .tagline {
+    font-size: 1.25rem;
+    color: #6b7280;
+    margin-bottom: 2.5rem;
+  }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .feature {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-    }
-
-    .feature h3 {
-      margin-top: 0;
-    }
-  </style>
-</body>
-</html>
+  .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
